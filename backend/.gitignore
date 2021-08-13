@@ -1,0 +1,17 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# Misc
+.DS_Store
+coverage
+.eslintcache
+
+# Env
+.env
+.env.dev
+.env.prod
+.env.test
