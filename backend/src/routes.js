@@ -1,8 +1,14 @@
 const { Router } = require('express');
 
+const fs = require('fs');
 const multer = require('multer');
 
-const upload = multer({ dest: './src/uploads/' });
+const dirUpload = './src/uploads/';
+if (!fs.existsSync(dirUpload)) {
+  fs.mkdirSync(dirUpload);
+}
+
+const upload = multer({ dest: dirUpload });
 
 const routes = Router();
 

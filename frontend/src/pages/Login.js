@@ -54,12 +54,16 @@ const Login = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <Grid container alignItems="center" justify="center" direction="column">
+        <h1>PDF List Application</h1>
+      </Grid>
       <Grid container alignItems="center" justify="center" direction="row">
         <TextField
           id="user"
           name="user"
           label="User"
           type="text"
+          required
           value={formValues.user}
           onChange={handleInputChange}
           classes={{ root: 'user' }}
@@ -68,6 +72,7 @@ const Login = () => {
           id="password"
           name="password"
           label="Password"
+          required
           type={showPassword ? "text" : "password"}
           value={formValues.password}
           onChange={handleInputChange}
@@ -81,7 +86,7 @@ const Login = () => {
         </IconButton>
       </Grid>
       <Grid container alignItems="center" justify="center" direction="column">
-        <Button variant="contained" color="primary" type="submit" fullWidth={true}>
+        <Button variant="contained" color="primary" type="submit">
           Login
         </Button>
       </Grid>

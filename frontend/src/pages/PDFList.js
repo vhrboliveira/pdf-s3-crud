@@ -27,7 +27,7 @@ export default function ListPDF() {
             headers: { Authorization: `Bearer ${authToken} ` }
           });
 
-        setPdfHeader('PDF List');
+        setPdfHeader('PDF List Application');
         setPdfList(response.data.files);
       } catch (error) {
         if (error.response && error.response.data) {
@@ -85,18 +85,16 @@ export default function ListPDF() {
           </Grid>
           <br />
           <form onSubmit={handleSubmit}>
-            <Grid container alignItems='center' justify='space-between' direction='row'>
+            <Grid container className="submit" alignItems='center' justify='flex-start' direction='row'>
               <Input
                 id="pdf"
                 name="pdf"
                 type="file"
                 onChange={handleSelectedFile}
               />
-              <Grid container alignItems="center" justify="center" direction="column">
-                <Button variant="contained" color="primary" type="submit" fullWidth={true}>
-                  Submit
-                </Button>
-              </Grid>
+              <Button variant="contained" color="primary" type="submit">
+                Submit
+              </Button>
             </Grid>
           </form>
         </>) : ''}

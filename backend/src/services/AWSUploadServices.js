@@ -45,7 +45,7 @@ class AWSUploadServices {
   }
 
   async getObject(userId, pdf) {
-    const signedUrlExpireSeconds = 60 * 60;
+    const signedUrlExpireSeconds = 60 * 3;
     const params = this.getBucket(userId);
     params.Key = pdf;
     params.Expires = signedUrlExpireSeconds;
